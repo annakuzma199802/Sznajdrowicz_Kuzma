@@ -11,7 +11,7 @@ if ($result) {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Debata</title>
+        <title> Debata </title>
         <link rel="stylesheet" href="style.css">
         <script>
             function togglePosts() {
@@ -35,13 +35,13 @@ if ($result) {
             <br>
             <br>
             <h1>Pytania dla kandydata reprezentującego firmę TESTOWĄ w debacie testerskiej</h1>
-            <button class="button" onclick="togglePosts()">Pokaż/Ukryj pytania</button>
+            <button class="button" onclick="togglePosts()">Pokaż / Ukryj pytania</button>
             <div id="posts" class="posts">
                 <?php while ($row = $result->fetch_assoc()): ?>
                     <div class="post">
                         <h2><?= $row['title'] ?></h2>
                         <p><?= $row['content'] ?></p>
-                        <p>Data dodania: <?= $row['created_at'] ?></p>
+                        <p>Data dodania : <?= $row['created_at'] ?></p>
                     </div>
                 <?php endwhile; ?>
             </div>
