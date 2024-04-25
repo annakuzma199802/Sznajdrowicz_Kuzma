@@ -13,6 +13,16 @@ if ($result) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Debata</title>
         <link rel="stylesheet" href="style.css">
+        <script>
+            function togglePosts() {
+                var postsDiv = document.getElementById("posts");
+                if (postsDiv.style.display === "none") {
+                    postsDiv.style.display = "block";
+                } else {
+                    postsDiv.style.display = "none";
+                }
+            }
+        </script>
     </head>
     <body>
         <div class="container">
@@ -25,6 +35,7 @@ if ($result) {
             <br>
             <br>
             <h1>Pytania dla kandydata reprezentującego firmę TESTOWĄ w debacie testerskiej</h1>
+            <button class="button" onclick="togglePosts()">Pokaż/Ukryj pytania</button>
             <div id="posts" class="posts">
                 <?php while ($row = $result->fetch_assoc()): ?>
                     <div class="post">
