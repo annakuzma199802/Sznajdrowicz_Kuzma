@@ -13,6 +13,16 @@ if ($result) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Debata</title>
         <link rel="stylesheet" href="style.css">
+        <script>
+            function togglePosts() {
+                var postsDiv = document.getElementById("posts");
+                if (postsDiv.style.display === "none") {
+                    postsDiv.style.display = "block";
+                } else {
+                    postsDiv.style.display = "none";
+                }
+            }
+        </script>
     </head>
     <body>
         <div class="container">
@@ -32,6 +42,7 @@ if ($result) {
                         <p><?= $row['content'] ?></p>
                         <p>Data dodania: <?= $row['created_at'] ?></p>
                     </div>
+                    <button class="button" onclick="togglePosts()">Pokaż/Ukryj pytania</button> 
                 <?php endwhile; ?>
             </div>
         </div>
@@ -44,3 +55,6 @@ if ($result) {
 
 $mysqli->close();
 ?>
+
+
+
